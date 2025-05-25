@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqefrt4vyd6na"]
+
+[ext_resource type="Texture2D" uid="uid://dgn24xq0vy84x" path="res://images/Dog_silhouette.svg" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://d3ctdwpwf7c3x" path="res://images/ground_tex.jpg" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
+
+[node name="Player" type="Node2D"]
+
+[node name="Window" type="Window" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/CharacterBody2D"]
+texture = ExtResource("1_4flbx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Window"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/StaticBody2D"]
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Window/StaticBody2D"]
+texture = ExtResource("2_onrkg")
